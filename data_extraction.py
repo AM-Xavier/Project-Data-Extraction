@@ -5,11 +5,18 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import pandas as pd
+from datetime import datetime
+import os
+import sys
 import time
 
 options = webdriver.ChromeOptions()
 options.add_experimental_option(name="detach", value=True)
 options.add_argument('--headless')
+
+application_path = os.path.dirname(sys.executable)
+now = datetime.now()
+date = now.strftime("%d-%m-%Y")
 
 website = "https://store.steampowered.com/"
 path = r"C:\Users\aless\Downloads\chromedriver-win64\chromedriver.exe"
@@ -64,7 +71,10 @@ steam_dict = {'Game Title': game_titles,
             'Game Price': game_prices,
             'Game Link': game_links}
 
+file_name = f'offers_{date}.csv'
+final_path = os.path.join(application_path, file_name)
+
 df_steam = pd.DataFrame(steam_dict)
-df_steam.to_csv('offers.csv', index=False)
+df_steam.to_csv(final_path, index=False)
 
 driver.quit()
