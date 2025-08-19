@@ -19,9 +19,10 @@ CSV handling
 📂 Output Example
 The extracted data is saved in a .csv file with the following structure:
 
-Game Title	Original Price	Discounted Price	Discount %
-Example 1	  $59.99	        $29.99	          -50%
-Example 2	  $19.99	        $9.99	            -50%
+| Game Title | Original Price | Discounted Price | Discount % |
+| ---------- | -------------- | ---------------- | ---------- |
+| Example 1  | \$59.99        | \$29.99          | -50%       |
+| Example 2  | \$19.99        | \$9.99           | -50%       |
 
 💡 Purpose
 This project is part of my learning journey in software development and data automation, applying theory to a practical use case.
